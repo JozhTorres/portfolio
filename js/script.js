@@ -43,4 +43,34 @@ document.addEventListener('DOMContentLoaded', function() {
         header.scrollIntoView({ behavior: 'smooth' });
     });
 
+    // Función para aplicar la animación de fadeIn cuando los elementos son visibles en la ventana
+    function fadeInOnScroll(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeIn 1s ease-in-out forwards';
+            }else{
+            // Eliminar la animación actual antes de observarla nuevamente
+            entry.target.style.animation = ''; // Establece la propiedad de animación como una cadena vacía
+            }
+        });
+    }
+
+    // Opciones de configuración para el IntersectionObserver
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0 // Puedes ajustar este valor según tu necesidad
+    };
+
+    // Crear un IntersectionObserver
+    const observer = new IntersectionObserver(fadeInOnScroll, options);
+
+    // Seleccionar todos los elementos dentro del contenedor con la clase .container
+    const elements = document.querySelectorAll('.container > *');
+
+    // Observar cada elemento y aplicar la animación cuando sea visible en la ventana
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+
 });

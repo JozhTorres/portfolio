@@ -10,6 +10,15 @@ html {
     scroll-behavior: smooth; /* Hace que el desplazamiento sea suave */
 }
 
+.intro {
+    max-width: 960px;
+    margin: auto;
+    padding: 0 20px;
+    position: relative; /* Asegura que los elementos dentro de la container respeten el flujo normal del documento */
+    z-index: 1; /* Asegura que los elementos dentro de la container estén por encima del video */
+    color: white; /* Ajusta el color del texto para que sea visible en el video */
+}
+
 body {
     font-family: Consolas, monospace;
     background-color: #0a0a0a;
@@ -39,7 +48,7 @@ header {
     max-width: 100%;
     text-align: center;
     position: relative;
-    height: 300px; /* Altura del encabezado */
+    height: 100vh; /* Altura del encabezado */
 }
 
 .video-container {
@@ -57,12 +66,6 @@ header {
     object-fit: cover; /* Ajustar el tamaño del video */
 }
 
-.container {
-    position: relative; /* Asegura que los elementos dentro de la container respeten el flujo normal del documento */
-    z-index: 1; /* Asegura que los elementos dentro de la container estén por encima del video */
-    color: white; /* Ajusta el color del texto para que sea visible en el video */
-}
-
 .container p{
     text-align: justify;
 }
@@ -72,7 +75,7 @@ header {
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
-    color: #5d3dcf; /* Color de texto */    
+    color: #007bff; /* Color de texto */    
 }
 
 header h1 {
@@ -199,28 +202,28 @@ footer p {
 
 @keyframes fadeIn {
     from {
-      opacity: 0.5; /* Comienza con una opacidad de 0.5 */
-      transform: translateY(20px); /* Desplazamiento hacia arriba */
+        opacity: 0.5; /* Comienza con una opacidad de 0.5 */
+        transform: translateY(20px); /* Desplazamiento hacia arriba */
     }
     to {
-      opacity: 1; /* Termina con una opacidad de 1 */
-      transform: translateY(0); /* Sin desplazamiento */
+        opacity: 1; /* Termina con una opacidad de 1 */
+        transform: translateY(0); /* Sin desplazamiento */
     }
-  }
+}
 
-  .imagen:hover {
+.imagen:hover {
     animation: zoomIn 5s ease-out; /* Nombre de la animación, duración y función de temporización */
-  }
+}
   
-  /* Definir la animación de zoom */
-  @keyframes zoomIn {
+/* Definir la animación de zoom */
+@keyframes zoomIn {
     from {
-      transform: scale(1); /* Tamaño normal */
+        transform: scale(1); /* Tamaño normal */
     }
     to {
-      transform: scale(1.1); /* Aumento del tamaño */
+        transform: scale(1.1); /* Aumento del tamaño */
     }
-  }
+}
 
 .gif-container {
     position: fixed;
@@ -304,8 +307,8 @@ footer p {
 .grid-item i {
     font-size: 40px; /* Tamaño de los íconos */
     border-radius: 50%; /* Hace que los íconos sean circulares */
-    background-color: #a773eb; /* Color de fondo */
-    color: rgb(91, 27, 194); /* Color del icono */
+    background-color: #0053ac; /* Color de fondo */
+    color: #007bff; /* Color del icono */
     padding: 20px; /* Espacio alrededor del icono */
     margin-bottom: 10px; /* Espacio entre el icono y el texto */
 }
