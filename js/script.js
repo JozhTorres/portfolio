@@ -24,19 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // JavaScript para el efecto de tecleado
-    const text = "Hola Mundo, mi nombre es Joshua Torres, Web Developer";
-    const typingTextElement = document.getElementById("typing-text");
-    let index = 0;
+    const typingText = document.getElementById('typing-text');
 
-    function typeText() {
-        if (index < text.length) {
-            typingTextElement.textContent += text[index];
-            index++;
-            setTimeout(typeText, 100); // Velocidad de escritura (en milisegundos)
+    // Detectar cuando la animación de escritura haya terminado
+    typingText.addEventListener('animationend', function(event) {
+        if (event.animationName === 'typing') {
+            // Iniciar la animación de parpadeo del cursor
+            typingText.style.borderRight = '10px solid #ffffff';
+            typingText.style.animation = 'blinkCursor 1s infinite alternate';
         }
-    }
-
-    typeText();
+    });
 
     window.addEventListener('load', function() {
         // Obtener el elemento del encabezado

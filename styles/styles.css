@@ -35,6 +35,8 @@ body {
 } */
 
 header {
+    min-height: auto;
+    max-width: 100%;
     text-align: center;
     position: relative;
     height: 300px; /* Altura del encabezado */
@@ -162,18 +164,24 @@ footer p {
 
 /* Estilos para el efecto de tecleado */
 #typing-text {
-    font-size: 31px;
-    border-right: 2px solid #ffffff;
+    text-align: center;
+    max-width: 100%;
+    font-size: 2.25vw;
+    border-right: 10px solid #ffffff;
     white-space: nowrap;
     overflow: hidden;
     margin: 0 auto;
-    animation: typing 5s steps(40, end) forwards, blinkCursor 1s infinite alternate; /* Añadir "forwards" para mantener el último fotograma */
+    animation: typing 5s steps(40, end); /* Añadir "forwards" para mantener el último fotograma */
 }
 
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
+
+/* .blinking-cursor {
+    animation: blinkCursor 1s infinite alternate;
+} */
 
 @keyframes blinkCursor {
     from, to { border-color: transparent; }
@@ -263,3 +271,8 @@ footer p {
     align-items: center; /* Alinea verticalmente el contenido en el centro */
     height: 100vh; /* Altura completa de la ventana */
 }
+
+@media (max-width: 768px) {
+    /* Estilos específicos para pantallas de hasta 768px de ancho */
+  }
+  
