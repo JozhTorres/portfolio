@@ -242,10 +242,15 @@ footer p {
     animation: fadeIn 2s ease-out; /* Nombre de la animación, duración y función de temporización */
 }
 
+.contact-section {
+    padding: 20px; /* Ajusta el espaciado según sea necesario */
+}
+
 .contact-info {
     display: flex; /* Mostrar los íconos como una fila flex */
     justify-content: center; /* Centrar horizontalmente los íconos */
     margin-top: 20px; /* Ajustar el margen superior según sea necesario */
+    flex-wrap: wrap; /* Permite que los íconos se envuelvan en múltiples líneas si es necesario */
 }
 
 .contact-info a {
@@ -254,6 +259,10 @@ footer p {
     flex-direction: column; /* Alinear los elementos verticalmente */
     align-items: center; /* Centrar horizontalmente los elementos */
     text-align: center; /* Centrar el texto */
+}
+
+.contact-info a i {
+    margin-right: 5px; /* Ajusta el espaciado entre el ícono y el texto */
 }
 
 .contact-info a span {
@@ -276,3 +285,32 @@ footer p {
     /* Estilos específicos para pantallas de hasta 768px de ancho */
   }
   
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajusta las columnas automáticamente */
+    gap: 20px; /* Espacio entre los elementos */
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-item i {
+    font-size: 40px; /* Tamaño de los íconos */
+    border-radius: 50%; /* Hace que los íconos sean circulares */
+    background-color: #a773eb; /* Color de fondo */
+    color: rgb(91, 27, 194); /* Color del icono */
+    padding: 20px; /* Espacio alrededor del icono */
+    margin-bottom: 10px; /* Espacio entre el icono y el texto */
+}
+
+.grid-item span {
+    font-size: 14px; /* Tamaño del texto */
+    color: black; /* Color del texto */
+}
