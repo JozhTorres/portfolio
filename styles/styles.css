@@ -1,0 +1,265 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+html {
+    scroll-behavior: smooth; /* Hace que el desplazamiento sea suave */
+}
+
+body {
+    font-family: Consolas, monospace;
+    background-color: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* header {
+    background: url('../img/patron_gamer.jpg') no-repeat center center/cover;
+    padding: 40px 0;
+    text-align: center;
+
+    background-image: linear-gradient(rgba(38, 0, 255, 0.5), rgba(255, 0, 0, 0.5)), url('../img/patron_gamer.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+} */
+
+header {
+    text-align: center;
+    position: relative;
+    height: 300px; /* Altura del encabezado */
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajustar el tamaño del video */
+}
+
+.container {
+    position: relative; /* Asegura que los elementos dentro de la container respeten el flujo normal del documento */
+    z-index: 1; /* Asegura que los elementos dentro de la container estén por encima del video */
+    color: white; /* Ajusta el color del texto para que sea visible en el video */
+}
+
+.container p{
+    text-align: justify;
+}
+
+.llamativo{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    color: #5d3dcf; /* Color de texto */    
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav ul li a {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #000000; /* Cambia al color de texto deseado */
+    background-color: #ffffff; /* Cambia al color de fondo deseado */
+}
+
+section {
+    padding: 40px 0;
+}
+
+.proyecto {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.proyecto h3 {
+    color: #333;
+}
+
+.proyecto p {
+    color: #666;
+}
+
+.proyecto a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.proyecto a:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 0.8rem;
+}
+
+.bg-dark {
+    background-color: #0a0a0a;
+}
+
+.bg-light {
+    background-color: #f4f4f4;
+}
+
+/* Animaciones */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Estilos para el efecto de tecleado */
+#typing-text {
+    font-size: 31px;
+    border-right: 2px solid #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+    animation: typing 5s steps(40, end) forwards, blinkCursor 1s infinite alternate; /* Añadir "forwards" para mantener el último fotograma */
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blinkCursor {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffffff; }
+}
+
+/* Ocultar el cursor al final de la animación */
+#typing-text::after {
+    content: '';
+    display: inline-block;
+    width: 2px; /* Ancho del cursor */
+    height: 31px; /* Altura del cursor, ajusta según el tamaño del texto */
+    background-color: transparent; /* Color del cursor */
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0.5; /* Comienza con una opacidad de 0.5 */
+      transform: translateY(20px); /* Desplazamiento hacia arriba */
+    }
+    to {
+      opacity: 1; /* Termina con una opacidad de 1 */
+      transform: translateY(0); /* Sin desplazamiento */
+    }
+  }
+
+  .imagen:hover {
+    animation: zoomIn 5s ease-out; /* Nombre de la animación, duración y función de temporización */
+  }
+  
+  /* Definir la animación de zoom */
+  @keyframes zoomIn {
+    from {
+      transform: scale(1); /* Tamaño normal */
+    }
+    to {
+      transform: scale(1.1); /* Aumento del tamaño */
+    }
+  }
+
+.gif-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.gif {
+    width: 100px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.imagen{
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    animation: fadeIn 2s ease-out; /* Nombre de la animación, duración y función de temporización */
+}
+
+.contact-info {
+    display: flex; /* Mostrar los íconos como una fila flex */
+    justify-content: center; /* Centrar horizontalmente los íconos */
+    margin-top: 20px; /* Ajustar el margen superior según sea necesario */
+}
+
+.contact-info a {
+    margin: 0 30px; /* Añadir espaciado entre los íconos */
+    display: flex;
+    flex-direction: column; /* Alinear los elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente los elementos */
+    text-align: center; /* Centrar el texto */
+}
+
+.contact-info a span {
+    margin-top: 5px; /* Espacio entre el ícono y el texto */
+}
+
+.contact-text {
+    vertical-align: middle; /* Alinea verticalmente el texto con el icono */
+    margin-left: 10px; /* Espaciado entre el icono y el texto */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente el contenido en el centro */
+    height: 100vh; /* Altura completa de la ventana */
+}
